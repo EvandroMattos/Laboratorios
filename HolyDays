@@ -1,0 +1,14 @@
+import de.jollyday.HolidayManager
+import de.jollyday.ManagerParameters
+import java.time.LocalDate
+import scala.collection.immutable.ListMap
+
+def getHolidays(country: String, minYear: Int, maxYear: Int): ListMap[LocalDate, String] = {
+  val years = minYear to maxYear
+  val holidayManager = HolidayManager.getInstance(ManagerParameters.create(country))
+  val hols = years.flatMap(year => holidayManager.getHolidays(year).asScala.map(holiday => (holiday.getDate, holiday.getDescription)))
+  ListMap(hols: _*)
+}
+
+val df = getHolidays("BRAZIL", 2020, 2022)
+println(df)
