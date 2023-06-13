@@ -1,4 +1,4 @@
-HoliDays: cria uma tabela com os feriados
+HoliDays: cria uma tabela com os feriados usando a linguagem scala
 
 docker-compose.yaml: Cria uma imagem com mensageria kafka
 1 - Salve o arquivo em qualquer pasta
